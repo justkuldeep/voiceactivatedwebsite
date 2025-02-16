@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./App.css"; 
-
 
 const VoiceActivatedWebsite = () => {
   const [transcript, setTranscript] = useState("");
@@ -62,38 +60,38 @@ const VoiceActivatedWebsite = () => {
   };
 
   return (
-    <div className="p-6 text-center bg-gray-100 min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-6 text-blue-700">Voice-Activated Website</h1>
+    <div className="p-6 text-center">
+      <h1 className="text-2xl font-bold mb-4">Voice-Activated Website</h1>
       <button
-        className={`px-6 py-3 text-lg font-semibold rounded-lg shadow-md transition-all ${listening ? "bg-red-500" : "bg-green-500"} text-white`}
+        className="px-4 py-2 bg-blue-500 text-white rounded"
         onClick={() => setListening(!listening)}
       >
         {listening ? "Stop Listening" : "Start Listening"}
       </button>
-      <p className="mt-4 text-lg text-gray-700">Say commands like "Scroll down", "Name is John"</p>
-      <form className="mt-6 w-full max-w-md bg-white p-6 rounded-lg shadow-lg">
+      <p className="mt-2 text-gray-600">Say commands like "Scroll down", "Name is John"</p>
+      <form className="mt-4">
         <input
           type="text"
           value={name}
           placeholder="Name"
           readOnly
-          className="block border p-3 w-full mb-4 rounded-lg focus:ring focus:ring-blue-300"
+          className="block border p-2 w-full mb-2"
         />
         <input
           type="email"
           value={email}
           placeholder="Email"
           readOnly
-          className="block border p-3 w-full mb-4 rounded-lg focus:ring focus:ring-blue-300"
+          className="block border p-2 w-full mb-2"
         />
         <textarea
           value={message}
           placeholder="Message"
           readOnly
-          className="block border p-3 w-full mb-4 rounded-lg focus:ring focus:ring-blue-300"
+          className="block border p-2 w-full mb-2"
         ></textarea>
       </form>
-      <p className="mt-6 text-lg text-gray-600">Recognized Text: <span className="font-semibold text-blue-600">{transcript}</span></p>
+      <p className="mt-4 text-gray-500">Recognized Text: {transcript}</p>
     </div>
   );
 };
